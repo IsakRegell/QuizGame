@@ -5,85 +5,113 @@
         static void Main(string[] args)
         {
             int score = 0;
+            bool programIsRunning = true;
 
             Console.WriteLine("Welcome to the Quiz");
             Console.WriteLine("- - - - - - - - - - - ");
+
+
             Q1();
-            String A1 = Console.ReadLine().ToUpper();
-
-            switch (A1)
+            while (programIsRunning)
             {
-                case "A":
-                    Console.WriteLine("Rätt svar");
-                    score++;
-                    break;
+                String A1 = Console.ReadLine().ToUpper();
 
-                case "B":
-                    Console.WriteLine("Fel svar, rätt svar var A");
-                    break;
-
-                case "C":
-                    Console.WriteLine("Fel svar, rätt svar var A");
-                    break;
-
-                case "D":
-                    Console.WriteLine("Fel svar, rätt svar var A");
-                    break;
-
-                 default:
-                    Console.WriteLine("Ogiltligt svar, försök igen!");
-                    break;  
-            }
-            Q2();
-            String A2 = Console.ReadLine().ToUpper();
-            switch (A2)
-            {
-                case "A":
-                    Console.WriteLine("Fel svar");
-                    break;
-
-                case "B":
-                    Console.WriteLine("Fel svar");
+                switch (A1)
+                {
+                    case "A":
+                        Console.WriteLine("Rätt svar");
+                        score++;
+                        programIsRunning = false;
                         break;
 
-                case "C":
-                    Console.WriteLine("Rätt svar");
-                    score++;
-                     break;
-                case"D":
-                    Console.WriteLine("Fel svar");
-                    break;
-                default: 
-                    Console.WriteLine("Oglitigt svar, försök igen");
-                    break;
+                    case "B":
+                        Console.WriteLine("Fel svar, rätt svar var A");
+                        programIsRunning = false;
+                        break;
+
+                    case "C":
+                        Console.WriteLine("Fel svar, rätt svar var A");
+                        programIsRunning = false;
+                        break;
+
+                    case "D":
+                        Console.WriteLine("Fel svar, rätt svar var A");
+                        programIsRunning = false;
+                        break;
+
+                    default:
+                        Console.WriteLine("Ogiltligt svar, försök igen!");
+                        break;
+                }
             }
+            
+            Q2();
+
+            while (!programIsRunning)
+            {
+                String A2 = Console.ReadLine().ToUpper();
+                switch (A2)
+                {
+                    case "A":
+                        Console.WriteLine("Fel svar");
+                        programIsRunning = true;
+                        break;
+
+                    case "B":
+                        Console.WriteLine("Fel svar");
+                        programIsRunning = true;
+                        break;
+
+                    case "C":
+                        Console.WriteLine("Rätt svar");
+                        programIsRunning = true;
+                        score++;
+                        break;
+                    case "D":
+                        Console.WriteLine("Fel svar");
+                        programIsRunning = true;
+                        break;
+                    default:
+                        Console.WriteLine("Oglitigt svar, försök igen");
+                        break;
+                }
+            }
+            
 
             Q3();
-            String A3 = Console.ReadLine().ToUpper();
-            switch (A3)
+            while (programIsRunning)
             {
-                case "A":
-                    Console.WriteLine("Fel svar");
-                    break;
+                String A3 = Console.ReadLine().ToUpper();
+                switch (A3)
+                {
+                    case "A":
+                        Console.WriteLine("Fel svar");
+                        programIsRunning = false;
+                        break;
 
-                case "B":
-                    Console.WriteLine("Rätt svar");
-                    score++;
-                    break;
+                    case "B":
+                        Console.WriteLine("Rätt svar");
+                        programIsRunning = false;
+                        score++;
+                        break;
 
-                case "C":
-                    Console.WriteLine("Fel svar");
-                    break;
+                    case "C":
+                        Console.WriteLine("Fel svar");
+                        programIsRunning = false;
+                        break;
 
-                case "D":
-                    Console.WriteLine("Fel svar");
-                    break;
+                    case "D":
+                        Console.WriteLine("Fel svar");
+                        programIsRunning = false;
+                        break;
 
-                default:
-                    Console.WriteLine("Ogiltígt svar, försök igen");
-                    break;
+                    default:
+                        Console.WriteLine("Ogiltígt svar, försök igen");
+                        break;
 
+                }
             }
+            
 
             Console.WriteLine($"Du fick {score} av 3 rätt");
 
